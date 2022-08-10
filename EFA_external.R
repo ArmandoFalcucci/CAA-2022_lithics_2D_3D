@@ -78,7 +78,7 @@ Shape_outlines_centered_scaled_rotated.LDA <- LDA(Shape_outlines_centered_scaled
 
 
 ## Screeplot----
-External_shapes_screeplot <- Momocs::scree_plot(Shape_outlines_centered_scaled_rotated.PCA, nax = 1:10)
+External_shapes_screeplot <- Momocs::scree_plot(Shape_outlines_centered_scaled_rotated.PCA, nax = 1:5)
 
 ggsave(External_shapes_screeplot,
        filename = file.path("External_screeplot.tiff"),
@@ -90,7 +90,7 @@ ggsave(External_shapes_screeplot,
 
 
 # Shape variation ----
-External_shape_variation <- Momocs::PCcontrib(Shape_outlines_centered_scaled_rotated.PCA,nax = 1:3, sd.r = c(-2,-1,0,1,2)) 
+External_shape_variation <- Momocs::PCcontrib(Shape_outlines_centered_scaled_rotated.PCA,nax = 1:4, sd.r = c(-2,-1,0,1,2)) 
 
 #to change orientation
 External_shape_variation_flipped <- External_shape_variation$gg +

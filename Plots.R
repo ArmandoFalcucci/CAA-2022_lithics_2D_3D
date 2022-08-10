@@ -249,3 +249,46 @@ ggsave(PC1toLength,
        dpi = 300, 
        units = "cm", 
        device = 'tiff')
+
+
+#Correlation PC1 sections and Robustness
+
+library("ggpubr")
+PC1_section_robustness_5th <- ggscatter(Dataset_new_plus_sections, x = "PC1_section", y = "Robustness_upper5th", 
+          add = "reg.line", conf.int = TRUE, 
+          cor.coef = TRUE, cor.method = "spearman",
+          xlab = "PC1", ylab = "Robustness (W/T ratio) upper 5th")
+
+ggsave(PC1_section_robustness_5th, 
+       filename = "PC1_Robustness5th_sections.tiff", 
+       width = 17, 
+       height = 12, 
+       dpi = 300, 
+       units = "cm", 
+       device = "tiff")
+
+
+PC1_section_robustness <- ggscatter(Dataset_new_plus_sections, x = "PC1_section", y = "Robustness", 
+                                        add = "reg.line", conf.int = TRUE, 
+                                        cor.coef = TRUE, cor.method = "spearman",
+                                        xlab = "PC1", ylab = "Robustness (W/T ratio)")
+
+
+ggsave(PC1_section_robustness, 
+       filename = "PC1_Robustness_sections.tiff", 
+       width = 17, 
+       height = 12, 
+       dpi = 300, 
+       units = "cm", 
+       device = "tiff")
+
+PC1_section_width <- ggscatter(Dataset_new_plus_sections, x = "PC1_section", y = "Width", 
+                                    add = "reg.line", conf.int = TRUE, 
+                                    cor.coef = TRUE, cor.method = "spearman",
+                                    xlab = "PC1", ylab = "Width (mm)")
+
+
+PC1_section_thickness <- ggscatter(Dataset_new_plus_sections, x = "PC1_section", y = "Thickness", 
+                               add = "reg.line", conf.int = TRUE, 
+                               cor.coef = TRUE, cor.method = "spearman",
+                               xlab = "PC1", ylab = "Width (mm)")
